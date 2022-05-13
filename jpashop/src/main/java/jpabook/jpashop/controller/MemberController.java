@@ -38,7 +38,11 @@ public class MemberController {
         member.setName(form.getName());
         member.setAddress(address);
 
-        memberService.join(member);
+        try {
+            memberService.join(member);
+        } catch (IllegalStateException e) {
+            return "members/createMemberForm";
+        }
         return "redirect:/";
     }
 

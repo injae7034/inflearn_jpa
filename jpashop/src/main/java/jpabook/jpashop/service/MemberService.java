@@ -20,7 +20,7 @@ public class MemberService {
      * 회원 가입
      */
     @Transactional
-    public Long join(Member member) {
+    public Long join(Member member) throws IllegalStateException {
 
         validateDuplicateMember(member); // 중복 회원 검증
         memberRepository.save(member);
