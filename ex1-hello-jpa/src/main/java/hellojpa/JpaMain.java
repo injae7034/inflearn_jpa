@@ -17,12 +17,14 @@ public class JpaMain {
 
         try {
 
-            //캐시가 없으면 DB에서 데이터 가져옴
-            Member findMember1 = em.find(Member.class, 101L);
-            //1차 캐시에서 데이터 가져옴
-            Member findMember2 = em.find(Member.class, 101L);
+            //영속
+            Member member1 = new Member(150L, "A");
+            Member member2 = new Member(160L, "B");
 
-            System.out.println("result = " + (findMember1 == findMember2));
+            em.persist(member1);
+            em.persist(member2);
+
+            System.out.println("====================");
 
             tx.commit();
         } catch (Exception e) {
