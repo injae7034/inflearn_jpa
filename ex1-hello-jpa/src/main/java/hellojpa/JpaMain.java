@@ -20,7 +20,9 @@ public class JpaMain {
             Member member = em.find(Member.class, 150L);
             member.setName("AAAAA");
 
-            em.detach(member);
+            em.clear();
+
+            Member member2 = em.find(Member.class, 150L);
 
             System.out.println("====================");
 
