@@ -22,6 +22,8 @@ public class JpaMain {
             //1차 캐시에서 데이터 가져옴
             Member findMember2 = em.find(Member.class, 101L);
 
+            System.out.println("result = " + (findMember1 == findMember2));
+
             tx.commit();
         } catch (Exception e) {
             tx.rollback();
