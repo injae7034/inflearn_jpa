@@ -16,6 +16,13 @@ public class AddressEntity {
     @Embedded
     private Address address;
 
+    public AddressEntity() {
+    }
+
+    public AddressEntity(Address address) {
+        this.address = address;
+    }
+
     public Address getAddress() {
         return address;
     }

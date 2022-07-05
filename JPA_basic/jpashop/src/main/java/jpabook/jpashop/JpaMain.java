@@ -1,6 +1,7 @@
 package jpabook.jpashop;
 
 import jpabook.jpashop.domain.Address;
+import jpabook.jpashop.domain.AddressEntity;
 import jpabook.jpashop.domain.Book;
 import jpabook.jpashop.domain.Member;
 
@@ -30,8 +31,10 @@ public class JpaMain {
             member.getFavoriteFoods().add("족발");
             member.getFavoriteFoods().add("피자");
 
-            member.getAddressHistory().add(new Address("old1", "street", "10000"));
-            member.getAddressHistory().add(new Address("old2", "street", "10000"));
+            member.getAddressEntities().add(new AddressEntity(
+                    new Address("old1", "street", "10000")));
+            member.getAddressEntities().add(new AddressEntity(
+                    new Address("old2", "street", "10000")));
 
             em.persist(member);
 
