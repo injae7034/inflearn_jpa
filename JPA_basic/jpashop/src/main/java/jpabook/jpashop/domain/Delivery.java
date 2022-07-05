@@ -18,7 +18,7 @@ public class Delivery extends BaseEntity {
 
     @Embedded
     Address address;
-    
+
     private DeliveryStatus status;
 
     @OneToOne(mappedBy = "delivery", fetch = LAZY)
