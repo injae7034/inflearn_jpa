@@ -72,4 +72,6 @@ public class MemberRepositoryTest {
         assertThat(result.get(0).getAge()).isEqualTo(20);
     }
 
+
+
 }
